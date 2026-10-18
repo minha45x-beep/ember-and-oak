@@ -255,13 +255,15 @@ header{
         font-size: clamp(42px, 10vw, 60px);
     }
     .menu-grid{
-        grid-template-columns: 1fr;
+        grid-template-columns:minmax(0,1fr);
     }
     .menu-card{
         align-items: center;
         padding: 30px;
         width: 450px;
         margin: 0 auto;
+        width: 100%;
+        max-width: 100%;
     }
     .contact-details{
         flex-direction: column;
