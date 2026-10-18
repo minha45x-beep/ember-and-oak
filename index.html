@@ -11,6 +11,10 @@
         <nav class="navbar">
             <a href="#" class="logo">Ember & Oak <span>.</span></a>
 
+            <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+                ≡
+            </button>
+
             <div class="nav-links">
                 <a href="#menu">Menu</a>
                 <a href="#about">Our Story</a>
@@ -102,4 +106,22 @@
 </footer>
 
 </body>
+
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click',() => {
+        navLinks.classList.toggle('active');
+
+        const isOpen = 
+        navLinks.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded',isOpen);
+        menuToggle.setAttribute('aria-label',isOpen ? 'Close menu' : 'Open menu');
+
+        menuToggle.textContent = isOpen ? 'X' : '≡';
+        
+    });
+</script>
+
 </html>
